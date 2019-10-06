@@ -13,13 +13,17 @@ class CreateProducts extends React.Component{
 
     async handleSubmission(e){
         e.preventDefault()
-        await this.props.createProductMutation({
-            variables:{
-                name: this.state.name,
-                parentCategoryId: this.state.parentCategoryId
-            },
-            refetchQueries:[{query: getProductsQuery}]
-        })
+        if(this.state.parentCategoryId === ""){
+            alert('you need to choose a parent category')
+        } else {
+            await this.props.createProductMutation({
+                variables:{
+                    name: this.state.name,
+                    parentCategoryId: this.state.parentCategoryId
+                },
+                refetchQueries:[{query: getProductsQuery}]
+            })
+        }
     }
 
     displayCategories(){

@@ -7,9 +7,9 @@ import './App.css';
 import Products from './Components/Products'
 import CreateProduct from './Components/CreateProduct'
 import CreateCategory from './Components/CreateCategory'
-// "http://localhost:5000/BeMyGuest"
+
 const client = new ApolloClient({
-  uri: '/bemyguest'
+  uri: 'https://mysterious-dusk-78499.herokuapp.com/bemyguest'
 })
 
 class App extends React.Component {
